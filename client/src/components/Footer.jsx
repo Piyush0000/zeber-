@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white border-t border-slate-800">
       {/* Contact Bar */}
-      <div className="bg-gradient-to-r from-blue-900 to-amber-900 py-4 px-6 text-center">
+      <div className="bg-blue-900 py-4 px-6 text-center">
         <div className="container mx-auto">
           <p className="text-lg font-medium">
             Have a question? Reach out! | 
-            <span className="mx-3 text-yellow-300">📞 +91 XXXXXXXXXX</span> | 
-            <span className="mx-3 text-yellow-300">✉️ contact@zeberai.com</span>
+            <span className="mx-3">📞 +91 XXXXXXXXXX</span> | 
+            <span className="mx-3">✉️ contact@zeberai.com</span>
           </p>
         </div>
       </div>
