@@ -23,9 +23,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-white">
-              <span className="text-blue-400">Zeber</span>
-              <span className="text-blue-300 ml-1">AI</span>
+            <Link to="/" className="text-2xl font-bold text-white flex items-center">
+              <span className="bg-gradient-to-r from-blue-400 to-amber-400 bg-clip-text text-transparent">Zeber</span>
+              <span className="ml-1 text-transparent bg-gradient-to-r from-amber-300 to-yellow-300 bg-clip-text">AI</span>
             </Link>
           </div>
           
@@ -33,25 +33,25 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6">
             <Link 
               to="/" 
-              className={`font-medium transition-all duration-200 ${location.pathname === '/' ? 'text-blue-400' : 'text-slate-300 hover:text-white'}`}
+              className={`font-medium transition-all duration-200 ${location.pathname === '/' ? 'text-yellow-400' : 'text-slate-300 hover:text-yellow-300'}`}
             >
               Home
             </Link>
             <Link 
               to="/services" 
-              className={`font-medium transition-all duration-200 ${location.pathname === '/services' ? 'text-blue-400' : 'text-slate-300 hover:text-white'}`}
+              className={`font-medium transition-all duration-200 ${location.pathname === '/services' ? 'text-yellow-400' : 'text-slate-300 hover:text-yellow-300'}`}
             >
               Services
             </Link>
             <Link 
               to="/team" 
-              className={`font-medium transition-all duration-200 ${location.pathname === '/team' ? 'text-blue-400' : 'text-slate-300 hover:text-white'}`}
+              className={`font-medium transition-all duration-200 ${location.pathname === '/team' ? 'text-yellow-400' : 'text-slate-300 hover:text-yellow-300'}`}
             >
               Team
             </Link>
             <Link 
               to="/contact" 
-              className={`font-medium transition-all duration-200 ${location.pathname === '/contact' ? 'text-blue-400' : 'text-slate-300 hover:text-white'}`}
+              className={`font-medium transition-all duration-200 ${location.pathname === '/contact' ? 'text-yellow-400' : 'text-slate-300 hover:text-yellow-300'}`}
             >
               Contact Us
             </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-3">
             <Link 
               to="/contact" 
-              className="bg-blue-700 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 shadow hover:shadow-md"
+              className="bg-gradient-to-r from-blue-700 to-amber-700 hover:from-blue-600 hover:to-amber-600 text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 shadow hover:shadow-md hover:scale-105"
             >
               Schedule a Demo
             </Link>
@@ -87,13 +87,13 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="md:hidden mt-3 pb-4 animate-fade-in-down">
             <div className="flex flex-col space-y-3 bg-slate-800 rounded-lg p-4 border border-slate-700">
-              <Link to="/" className="font-medium text-slate-300 hover:text-white transition-colors duration-200 py-2">Home</Link>
-              <Link to="/services" className="font-medium text-slate-300 hover:text-white transition-colors duration-200 py-2">Services</Link>
-              <Link to="/team" className="font-medium text-slate-300 hover:text-white transition-colors duration-200 py-2">Team</Link>
-              <Link to="/contact" className="font-medium text-slate-300 hover:text-white transition-colors duration-200 py-2">Contact Us</Link>
+              <Link to="/" className="font-medium text-slate-300 hover:text-yellow-300 transition-colors duration-200 py-2">Home</Link>
+              <Link to="/services" className="font-medium text-slate-300 hover:text-yellow-300 transition-colors duration-200 py-2">Services</Link>
+              <Link to="/team" className="font-medium text-slate-300 hover:text-yellow-300 transition-colors duration-200 py-2">Team</Link>
+              <Link to="/contact" className="font-medium text-slate-300 hover:text-yellow-300 transition-colors duration-200 py-2">Contact Us</Link>
               <Link 
                 to="/contact" 
-                className="bg-blue-700 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 text-center mt-2"
+                className="bg-gradient-to-r from-blue-700 to-amber-700 hover:from-blue-600 hover:to-amber-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 text-center mt-2"
               >
                 Schedule a Demo
               </Link>
