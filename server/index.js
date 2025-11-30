@@ -3,6 +3,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const contactRoutes = require('./routes/contactRoutes');
+const serviceRoutes = require('./routes/serviceRoutes');
+const teamRoutes = require('./routes/teamRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -22,6 +24,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/zeberai')
 
 // Routes
 app.use('/api', contactRoutes);
+app.use('/api', serviceRoutes);
+app.use('/api', teamRoutes);
 
 app.get('/', (req, res) => {
   res.send('ZeberAI API is running...');

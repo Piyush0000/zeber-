@@ -1,9 +1,7 @@
-const express = require('express');
-const router = express.Router();
 const ContactRequest = require('../models/ContactRequest');
 
-// POST route for contact form submission
-router.post('/contact', async (req, res) => {
+// Create a new contact request
+exports.createContactRequest = async (req, res) => {
   try {
     const { 
       name, 
@@ -73,14 +71,15 @@ router.post('/contact', async (req, res) => {
       error: error.message 
     });
   }
-});
+};
 
-// GET route to fetch all contact requests (for admin purposes)
-router.get('/contact', async (req, res) => {
+// Get all contact requests
+exports.getAllContactRequests = async (req, res) => {
   try {
     const contactRequests = await ContactRequest.find().sort({ createdAt: -1 });
     res.status(200).json({
       success: true,
+      count: contactRequests.length,
       data: contactRequests
     });
   } catch (error) {
@@ -91,10 +90,10 @@ router.get('/contact', async (req, res) => {
       error: error.message
     });
   }
-});
+};
 
-// GET route to fetch a single contact request by ID
-router.get('/contact/:id', async (req, res) => {
+// Get a single contact request by ID
+exports.getContactRequestById = async (req, res) => {
   try {
     const contactRequest = await ContactRequest.findById(req.params.id);
     
@@ -117,10 +116,41 @@ router.get('/contact/:id', async (req, res) => {
       error: error.message
     });
   }
-});
+};
 
-// DELETE route to remove a contact request by ID
-router.delete('/contact/:id', async (req, res) => {
+// Update a contact request by ID
+exports.updateContactRequest = async (req, res) => {
+  try {
+    const contactRequest = await ContactRequest.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
+    
+    if (!contactRequest) {
+      return res.status(404).json({
+        success: false,
+        message: 'Contact request not found'
+      });
+    }
+    
+    res.status(200).json({
+      success: true,
+      message: 'Contact request updated successfully',
+      data: contactRequest
+    });
+  } catch (error) {
+    console.error('Error updating contact request:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error updating contact request',
+      error: error.message
+    });
+  }
+};
+
+// Delete a contact request by ID
+exports.deleteContactRequest = async (req, res) => {
   try {
     const contactRequest = await ContactRequest.findByIdAndDelete(req.params.id);
     
@@ -143,6 +173,4 @@ router.delete('/contact/:id', async (req, res) => {
       error: error.message
     });
   }
-});
-
-module.exports = router;
+};

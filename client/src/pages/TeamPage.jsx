@@ -8,7 +8,6 @@ const TeamPage = () => {
     {
       name: "Shivam Tiwari",
       role: "Founder and CEO",
-      background: "Ex-Engineering Director at Microsoft, B.Tech from IIT Bombay",
       bio: "Building scalable AI systems that power enterprise solutions for clients worldwide.",
       image: shivamImg,
       gradient: "from-blue-500 to-purple-500",
@@ -17,8 +16,7 @@ const TeamPage = () => {
     {
       name: "Piyush Rathore",
       role: "Chief Technology Officer",
-      background: "Former Google AI Research Lead, PhD in Machine Learning from MIT",
-      bio: "Leading our AI research initiatives with over 15 years of experience in machine learning and neural networks.",
+      bio: "A versatile full-stack developer specializing in AI/ML solutions for healthcare, finance, and urban planning.",
       image: piyushImg,
       gradient: "from-amber-500 to-yellow-500",
       delay: 400
@@ -26,7 +24,6 @@ const TeamPage = () => {
     {
       name: "Shubham Raj",
       role: "Chief Marketing Officer",
-      background: "Former Senior Data Scientist at Amazon, MS in Data Science from Stanford",
       bio: "Transforming complex data into actionable insights that drive business growth.",
       image: shubhamImg,
       gradient: "from-teal-500 to-green-500",
@@ -35,8 +32,7 @@ const TeamPage = () => {
     {
       name: "Sagar Teotia",
       role: "Product Manager",
-      background: "Ex-Product Lead at Meta, MBA from IIM Bangalore",
-      bio: "Bridging the gap between cutting-edge AI technology and real business needs.",
+      bio: "A visionary AI/VR developer building transformative solutions for national security and global accessibility.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
       gradient: "from-purple-500 to-pink-500",
       delay: 600
@@ -44,7 +40,6 @@ const TeamPage = () => {
     {
       name: "Ritvik Kant",
       role: "Cloud Architect",
-      background: "Former Research Scientist at IBM Watson, PhD from IIIT Hyderabad",
       bio: "Developing innovative AI algorithms that solve complex business challenges.",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
       gradient: "from-blue-500 to-teal-500",
@@ -53,7 +48,6 @@ const TeamPage = () => {
     {
       name: "Nishtha",
       role: "UI/UX Designer",
-      background: "Former Strategy Consultant at McKinsey, MBA from Harvard Business School",
       bio: "Helping organizations adopt AI strategies that align with their business objectives.",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop&ixlib=rb-4.0.3",
       gradient: "from-amber-500 to-orange-500",
