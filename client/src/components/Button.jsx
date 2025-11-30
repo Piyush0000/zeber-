@@ -13,13 +13,13 @@ const Button = ({
   const [isCrazyMode, setIsCrazyMode] = useState(false);
 
   // Define base classes
-  let baseClasses = 'font-bold rounded-2xl transition-all duration-300 focus:outline-none focus:ring-4 transform hover:-translate-y-1 active:translate-y-0 ';
+  let baseClasses = 'font-bold rounded-2xl transition-all duration-300 focus:outline-none focus:ring-4 transform hover:-translate-y-1 active:translate-y-0 shadow-lg hover:shadow-xl ';
   
-  // Variant classes with professional blue theme and colorful animations
+  // Variant classes with dark theme and Gen Z animations
   const variantClasses = {
-    primary: `bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 text-white focus:ring-blue-300 shadow-2xl hover:shadow-blue-500/30 ${isHovered ? 'animate-pulse' : ''}`,
-    secondary: `bg-gradient-to-r from-blue-400 to-cyan-500 hover:from-blue-500 to-cyan-600 text-white focus:ring-cyan-300 shadow-2xl hover:shadow-cyan-500/30 ${isHovered ? 'animate-bounce' : ''}`,
-    outline: `bg-transparent border-2 border-blue-500 text-blue-600 hover:bg-blue-500/20 focus:ring-blue-300 ${isHovered ? 'animate-shake' : ''}`
+    primary: `bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:from-purple-700 hover:via-pink-600 hover:to-orange-600 text-white focus:ring-purple-300 shadow-2xl hover:shadow-purple-500/30 ${isHovered ? 'animate-pulse animate-neon-glow' : ''}`,
+    secondary: `bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 to-blue-600 text-white focus:ring-cyan-300 shadow-2xl hover:shadow-cyan-500/30 ${isHovered ? 'animate-bounce animate-wave' : ''}`,
+    outline: `bg-transparent border-2 border-purple-500 text-purple-400 hover:bg-purple-500/20 focus:ring-purple-300 ${isHovered ? 'animate-shake animate-glitch' : ''}`
   };
   
   // Size classes
@@ -57,7 +57,7 @@ const Button = ({
       </button>
       <button 
         onClick={toggleCrazyMode}
-        className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-full w-6 h-6 text-xs animate-pulse"
+        className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-full w-6 h-6 text-xs animate-pulse animate-wave"
         title="Toggle Crazy Mode"
       >
         !

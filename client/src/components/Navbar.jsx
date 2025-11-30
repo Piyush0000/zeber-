@@ -24,13 +24,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-blue-900/90 backdrop-blur-lg py-2 shadow-2xl' : 'bg-gradient-to-r from-blue-800/80 via-blue-700/80 to-blue-900/80 backdrop-blur-sm py-4'} ${isCrazyMode ? 'animate-gradient-shift' : ''}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-900/90 backdrop-blur-lg py-2 shadow-2xl' : 'bg-gradient-to-r from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-sm py-4'} ${isCrazyMode ? 'animate-gradient-shift animate-hue-shift' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="text-3xl font-bold animate-float">
-              <span className={`text-white ${isCrazyMode ? 'animate-spin-slow' : ''}`}>Zeber</span>
-              <span className="text-blue-300 ml-1 animate-pulse">AI</span>
+              <span className={`text-white ${isCrazyMode ? 'animate-spin-slow animate-neon-glow' : 'animate-wave'}`}>Zeber</span>
+              <span className="text-purple-400 ml-1 animate-pulse animate-glitch">AI</span>
             </Link>
           </div>
           
@@ -38,25 +38,25 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-8">
             <Link 
               to="/" 
-              className={`font-bold text-lg transition-all duration-300 hover:text-blue-300 transform hover:scale-110 ${location.pathname === '/' ? 'text-blue-300 animate-pulse' : 'text-white'}`}
+              className={`font-bold text-lg transition-all duration-300 hover:text-purple-300 transform hover:scale-110 ${location.pathname === '/' ? 'text-purple-300 animate-pulse animate-neon-glow' : 'text-white'}`}
             >
               Home
             </Link>
             <Link 
               to="/services" 
-              className={`font-bold text-lg transition-all duration-300 hover:text-blue-400 transform hover:scale-110 ${location.pathname === '/services' ? 'text-blue-400 animate-bounce' : 'text-white'}`}
+              className={`font-bold text-lg transition-all duration-300 hover:text-pink-400 transform hover:scale-110 ${location.pathname === '/services' ? 'text-pink-400 animate-bounce animate-wave' : 'text-white'}`}
             >
               Services
             </Link>
             <Link 
               to="/team" 
-              className={`font-bold text-lg transition-all duration-300 hover:text-blue-300 transform hover:scale-110 ${location.pathname === '/team' ? 'text-blue-300 animate-shake' : 'text-white'}`}
+              className={`font-bold text-lg transition-all duration-300 hover:text-cyan-300 transform hover:scale-110 ${location.pathname === '/team' ? 'text-cyan-300 animate-shake animate-glitch' : 'text-white'}`}
             >
               Team
             </Link>
             <Link 
               to="/contact" 
-              className={`font-bold text-lg transition-all duration-300 hover:text-blue-200 transform hover:scale-110 ${location.pathname === '/contact' ? 'text-blue-200 animate-float' : 'text-white'}`}
+              className={`font-bold text-lg transition-all duration-300 hover:text-orange-300 transform hover:scale-110 ${location.pathname === '/contact' ? 'text-orange-300 animate-float animate-hue-shift' : 'text-white'}`}
             >
               Contact Us
             </Link>
@@ -65,13 +65,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button 
               onClick={toggleCrazyMode}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-110 animate-pulse"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-110 animate-pulse animate-wave"
             >
               {isCrazyMode ? 'CRAZY MODE ON!' : 'GO CRAZY!'}
             </button>
             <Link 
               to="/contact" 
-              className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 hover:from-blue-700 hover:via-blue-600 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl animate-bounce"
+              className="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:from-purple-700 hover:via-pink-600 hover:to-orange-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl animate-bounce animate-neon-glow"
             >
               Schedule a Demo
             </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-3">
             <button 
               onClick={toggleCrazyMode}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold py-1 px-3 rounded-full text-sm animate-pulse"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold py-1 px-3 rounded-full text-sm animate-pulse animate-wave"
             >
               {isCrazyMode ? 'CRAZY!' : 'GO!'}
             </button>
@@ -103,14 +103,14 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-fade-in-down">
-            <div className="flex flex-col space-y-4 bg-black/50 backdrop-blur-lg rounded-2xl p-6">
-              <Link to="/" className="font-bold text-white hover:text-blue-300 transition-colors duration-300 text-lg">Home</Link>
-              <Link to="/services" className="font-bold text-white hover:text-blue-400 transition-colors duration-300 text-lg">Services</Link>
-              <Link to="/team" className="font-bold text-white hover:text-blue-300 transition-colors duration-300 text-lg">Team</Link>
-              <Link to="/contact" className="font-bold text-white hover:text-blue-200 transition-colors duration-300 text-lg">Contact Us</Link>
+            <div className="flex flex-col space-y-4 bg-slate-900/80 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30">
+              <Link to="/" className="font-bold text-white hover:text-purple-300 transition-colors duration-300 text-lg animate-wave">Home</Link>
+              <Link to="/services" className="font-bold text-white hover:text-pink-400 transition-colors duration-300 text-lg animate-bounce">Services</Link>
+              <Link to="/team" className="font-bold text-white hover:text-cyan-300 transition-colors duration-300 text-lg animate-shake">Team</Link>
+              <Link to="/contact" className="font-bold text-white hover:text-orange-300 transition-colors duration-300 text-lg animate-float">Contact Us</Link>
               <Link 
                 to="/contact" 
-                className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 hover:from-blue-700 hover:via-blue-600 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center shadow-lg hover:shadow-2xl animate-bounce"
+                className="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:from-purple-700 hover:via-pink-600 hover:to-orange-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 text-center shadow-lg hover:shadow-2xl animate-bounce animate-neon-glow"
               >
                 Schedule a Demo
               </Link>

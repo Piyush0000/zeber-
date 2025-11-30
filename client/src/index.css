@@ -119,6 +119,78 @@
   }
 }
 
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 60px #ff00de;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -199,12 +271,29 @@
 }
 
 .animate-rainbow {
-  background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa, #93c5fd, #bfdbfe);
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #f43f5e, #f59e0b, #10b981);
   background-size: 400% 400%;
   animation: rainbow 5s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.animate-neon-glow {
+  animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+.animate-hue-shift {
+  animation: hueShift 10s linear infinite;
 }
 
 .animate-spin-slow {
@@ -255,7 +344,7 @@
 
 /* Crazy effects */
 .crazy-rainbow-text {
-  background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa, #93c5fd, #bfdbfe);
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #f43f5e, #f59e0b, #10b981);
   background-size: 400% 400%;
   animation: rainbow 3s linear infinite;
   -webkit-background-clip: text;
@@ -273,22 +362,41 @@
     0 0 40px #ff00de, 
     0 0 50px #ff00de, 
     0 0 75px #ff00de;
+  animation: neonGlow 2s ease-in-out infinite alternate;
 }
 
 .crazy-background-animation {
-  background: linear-gradient(-45deg, #1e40af, #3b82f6, #60a5fa, #93c5fd);
+  background: linear-gradient(-45deg, #8b5cf6, #ec4899, #f43f5e, #f59e0b, #10b981);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.crazy-neon-glow {
+  text-shadow: 
+    0 0 5px #fff, 
+    0 0 10px #fff, 
+    0 0 15px #fff, 
+    0 0 20px #ff00de, 
+    0 0 35px #ff00de, 
+    0 0 40px #ff00de, 
+    0 0 50px #ff00de, 
+    0 0 75px #ff00de;
+}
+
+.crazy-background-animation {
+  background: linear-gradient(-45deg, #8b5cf6, #ec4899, #f43f5e, #f59e0b, #10b981);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #ffffff;
-  color: #1e40af; /* Primary blue text */
+  background: #0f172a;
+  color: #e2e8f0;
 }
